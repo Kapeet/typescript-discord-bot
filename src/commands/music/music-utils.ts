@@ -13,7 +13,7 @@ player.on(AudioPlayerStatus.Playing, () => {
 
   const channel = serverQueue.getTextChannel();
   if (channel === undefined) return;
-  channel.send(`Now Playing: **${currentlyPlayingSong.info.videoDetails.title}**`).catch(console.error);
+  channel.send(`Now Playing: \`${currentlyPlayingSong.info.videoDetails.title}\``).catch(console.error);
 });
 player.on(AudioPlayerStatus.Idle, () => {
   const nextSong = serverQueue.getFirstSong();

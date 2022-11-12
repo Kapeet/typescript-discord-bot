@@ -61,7 +61,7 @@ export async function execute (interaction: CommandInteraction, client: Client):
   };
   serverQueue.addSongToQueue(newSong);
   console.log(`added ${newSong.info.videoDetails.title} to queue. queue length: ${serverQueue.getQueuedSongs().length}`);
-  interaction.editReply(`Added **${newSong.info.videoDetails.title}** to queue! position in queue: ${serverQueue.getQueuedSongs().length}`).catch(console.error);
+  interaction.editReply(`Added \`${newSong.info.videoDetails.title}\` to queue! position in queue: ${serverQueue.getQueuedSongs().length}`).catch(console.error);
   const shouldPlaySongImmediately: boolean = player.state.status === AudioPlayerStatus.Idle && serverQueue.getQueuedSongs().length > 0;
   if (shouldPlaySongImmediately) {
     const nextSong = serverQueue.getFirstSong();
